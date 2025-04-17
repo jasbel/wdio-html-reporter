@@ -1,6 +1,6 @@
 {
   "name": "@jasbel/wdio-html-nice-reporter",
-  "version": "8.1.11",
+  "version": "8.1.12",
   "description": "WebdriverIO report plugin. Create an HTML formatted report. compatible with webdriverio version 9",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
