@@ -19,7 +19,7 @@
     </tr>
     {% if displaySpecFile(suite) %}
         <tr>
-            <td>Spec File</td>
+            <td>Archivo</td>
             <td>{{ formatSpecFile(suite) }}</td>
         </tr>
     {% endif %}
@@ -27,15 +27,15 @@
     {% if suite.tests %}
     {% if suite.type.includes('suite') or suite.type.includes('scenario') %}
         <tr>
-            <td>Suite Start</td>
+            <td>Inicio Suite</td>
             <td>{{suite.start}}</td>
         </tr>
         <tr>
-            <td>Suite End</td>
+            <td>Fin Suite</td>
             <td>{{suite.end}}</td>
         </tr>
         <tr>
-            <td>Suite Duration</td>
+            <td>Duración Suite </td>
             <td>{{ humanizeDuration(suite._duration) }}</td>
         </tr>
 
