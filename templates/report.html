@@ -506,6 +506,29 @@
         }
 
     </style>
+    <style>
+        .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+            border-radius: 6px;
+        }
+
+        .test-pass, .suite-pass {
+            border-radius: 4px;
+        }
+
+        .table-bordered {
+        }
+
+        .filterOff {
+            background-color: #E7E5E7;
+            font-weight: bold;
+        }
+
+        .filter {
+            background-color: #508EFF;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
 </head>
 
 {% from "suite.njk" import renderSuite %}
@@ -516,39 +539,39 @@
 
     <div id="wdio-html-report" class="page-header"><h1>{{title}}</h1></div>
 
-    <h2>Summary</h2>
+    <h2>Resumen</h2>
     <table class="table">
         <thead>
-        <th>Key</th>
-        <th>Value</th>
+        <th>Accion</th>
+        <th>Resultado</th>
         </thead>
 
         <tbody>
         <tr>
-            <td>Browser</td>
+            <td>Navegador</td>
             <td>{{browserName}}</td>
         </tr>
 
         <tr>
-            <td>Start</td>
+            <td>Inicio</td>
             <td>{{metrics.start}}</td>
         </tr>
         <tr>
-            <td>End</td>
+            <td>Fin</td>
             <td>{{metrics.end}}</td>
         </tr>
         <tr>
-            <td>Duration</td>
+            <td>Duración</td>
             <td>{{ humanizeDuration(metrics.duration) }}</td>
         </tr>
         <tr>
-            <td>Breakdown</td>
+            <td>Desglose</td>
             <td>
                 <table class="table table-bordered">
                     <tr>
-                        <td class='test-pass'>Tests Passed</td>
-                        <td class='test-skipped'>Tests Skipped</td>
-                        <td class='test-fail'>Test Failures</td>
+                        <td class='test-pass'>Tests Aprobados</td>
+                        <td class='test-skipped'>Tests Saltadas</td>
+                        <td class='test-fail'>Test Fallados</td>
                     </tr>
                     <tr>
                         <td>{{metrics.passed}}</td>
@@ -564,14 +587,14 @@
     <table class="table table-bordered">
         <tr>
             <td>
-                <span class="filter toggleFailingSuites"><span>Hide</span> Failing Suites</span>
-                <span class="filter togglePassingSuites"><span>Hide</span> Passing Suites</span>
-                <span class="filter toggleFailingTests"><span>Hide</span> Failing Tests</span>
-                <span class="filter togglePassingTests"><span>Hide</span> Passing Tests</span>
+                <span class="filter toggleFailingSuites"><span>Ocultar</span> Suites Falladas </span>
+                <span class="filter togglePassingSuites"><span>Ocultar</span> Suites Paso </span>
+                <span class="filter toggleFailingTests"><span>Ocultar</span> Tests Falladas </span>
+                <span class="filter togglePassingTests"><span>Ocultar</span> Tests Paso </span>
             </td>
         </tr>
     </table>
-    <h2>Results</h2>
+    <h2>Resultados</h2>
     <table>
         <tr>
         <td>
@@ -587,14 +610,14 @@
                     {% if specs %}
                         {% for spec in specs %}
                         <tr>
-                            <td>Spec File</td>
+                            <td>Archivo</td>
                             <td>{{spec}}</td>
                         </tr>
                         {% endfor %}
                     {% else %}
                         {% for spec in info.specs %}
                             <tr>
-                                <td>Spec File</td>
+                                <td>Archivo</td>
                                 <td>{{spec}}</td>
                             </tr>
                         {% endfor %}
@@ -717,10 +740,10 @@
             return parents;
         }
         let toggleVisibilityText = (selector) => {
-            if (selector.innerText == 'Show') {
-                selector.innerText = 'Hide';
+            if (selector.innerText == 'Ver') {
+                selector.innerText = 'Ocultar';
             } else {
-                selector.innerText = 'Show';
+                selector.innerText = 'Ver';
             }
         }
         /*
