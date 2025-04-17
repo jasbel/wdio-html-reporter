@@ -1,6 +1,6 @@
 {
   "name": "@jasbel/wdio-html-nice-reporter",
-  "version": "8.1.8",
+  "version": "8.1.9",
   "description": "WebdriverIO report plugin. Create an HTML formatted report. compatible with webdriverio version 9",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -17,7 +17,7 @@
     "test:invalid": "mocha ./lib/test/invalid.test.spec.js",
     "test:reporter": "mocha ./lib/test/reporter.spec.js",
     "test:nested": "mocha ./lib/test/nested.test.spec.js",
-    "prepare": "npm run build"
+    "prepare": ""
   },
   "repository": {
     "type": "git",
